@@ -26,5 +26,9 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 :root {
-    --base-color: #59CA8F;
+    --accent-color: #59CA8F;
+}
+
+.text-accent {
+    color: var(--accent-color);
 }

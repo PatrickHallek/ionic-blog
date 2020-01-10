@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
+    <ion-title class="text-accent">
       Blog
     </ion-title>
   </ion-toolbar>
@@ -9,14 +9,14 @@
 <ion-content>
   <ion-card *ngFor="let blogPost of blogPosts" (click)="openBlogPost(blogPost)">
     <ion-card-header>
-      <ion-card-subtitle>{{blogPost.user}}</ion-card-subtitle>
+      <ion-card-subtitle class="text-accent">{{blogPost.user}}</ion-card-subtitle>
       <ion-card-title class="ion-text-uppercase">{{blogPost.title}}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       {{blogPost.content}}
     </ion-card-content>
-    <ion-card-content *ngIf="blogPost.comments" class="ion-text-right">
-      {{blogPost.comments.length}} <ion-icon name="contacts"></ion-icon>
+    <ion-card-content *ngIf="blogPost.comments" class="ion-text-right text-accent">
+      {{blogPost.comments.length}} <ion-icon class="text-accent" name="contacts"></ion-icon>
     </ion-card-content>
   </ion-card>
 </ion-content>

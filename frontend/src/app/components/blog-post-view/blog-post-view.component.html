@@ -9,7 +9,7 @@
 <ion-content>
   <ion-card>
     <ion-card-header>
-      <ion-card-subtitle>{{user}}</ion-card-subtitle>
+      <ion-card-subtitle class="text-accent">{{user}}</ion-card-subtitle>
       <ion-card-title class="ion-text-uppercase">{{title}}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
@@ -20,7 +20,7 @@
   <ion-list *ngIf="comments">
     <ion-item *ngFor="let comment of comments">
       <ion-label class="ion-text-wrap">
-        <ion-list-header class="ion-no-padding">
+        <ion-list-header class="ion-no-padding text-accent">
           {{comment.user}}
         </ion-list-header>
         <p>{{comment.content}}</p>
