@@ -3,11 +3,12 @@ var Schema = mongoose.Schema;
 
 var blogPostSchema = new Schema({
     title: String,
+    content: String,
     user: String,
     timestamp: Date,
     comments: [{
         user: String,
-        comment: String,
+        content: String,
         timestamp: Date
     }]
 });
