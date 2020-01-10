@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { NavParams } from '@ionic/angular';
+import { Component, OnInit, Input } from '@angular/core';
+import { NavParams, ModalController } from '@ionic/angular';
 
 
 @Component({
@@ -9,8 +9,20 @@ import { NavParams } from '@ionic/angular';
 })
 export class BlogPostViewComponent implements OnInit {
 
-  constructor() { }
+  @Input() comments: any;
+  @Input() user: any;
+  @Input() title: any;
+  @Input() content: any;
 
-  ngOnInit() { }
+  constructor(public modalController: ModalController) { }
+
+  ngOnInit() {
+  }
+
+  dismiss() {
+    this.modalController.dismiss({
+      'dismissed': true
+    });
+  }
 
 }

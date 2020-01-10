@@ -12,9 +12,10 @@ export class HomePage {
 
   constructor(public modalController: ModalController) { }
 
-  async openBlogPost() {
+  async openBlogPost(blogPost) {
     const modal = await this.modalController.create({
-      component: BlogPostViewComponent
+      component: BlogPostViewComponent,
+      componentProps: blogPost
     });
     return await modal.present();
   }
