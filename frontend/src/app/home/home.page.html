@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-card (click)="openBlogPost()" *ngFor="let blogPost of blogPosts">
+  <ion-card *ngFor="let blogPost of blogPosts" (click)="openBlogPost(blogPost)">
     <ion-card-header>
       <ion-card-subtitle>{{blogPost.user}}</ion-card-subtitle>
       <ion-card-title class="ion-text-uppercase">{{blogPost.title}}</ion-card-title>
