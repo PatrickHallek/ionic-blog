@@ -13,4 +13,4 @@ var blogPostSchema = new Schema({
     }]
 });
 
-module.exports = mongoose.model('users', userSchema);
+module.exports = mongoose.model('blogPost', blogPostSchema);
