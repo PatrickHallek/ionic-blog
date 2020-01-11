@@ -4,22 +4,20 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
 var app = express();
 
-mongoose.connect('mongodb://localhost/blog', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function () {
-  console.log('connected to database!')
-});
+mongoose.connect("mongodb://localhost/blog", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
+  .then(() => {
+    console.log('Connection to database!')
+  })
+  .catch(() => {
+    console.log('Connection to database failed!');
+  })
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -30,6 +28,13 @@ app.use(express.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Enable Cors
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  next();
+});
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
@@ -37,6 +42,10 @@ app.use('/users', usersRouter);
 app.use(function (req, res, next) {
   next(createError(404));
 });
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
 
 // error handler
 app.use(function (err, req, res, next) {
