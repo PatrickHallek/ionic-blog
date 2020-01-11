@@ -23,13 +23,13 @@ export class BlogPostService {
   }
 
   public createBlogPost(user, content) {
-    const send = { user, content };
-    this.http.post('http://localhost:3000/blog-post', send)
+    this.http.post('http://localhost:3000/blog-post', { user, content })
       .subscribe(() => { }, err => console.error(err));
   }
 
-  public createBlogPostComment() {
-    this.http.put('http://localhost:3000/blog-post-comment', {})
+  public createBlogPostComment(id, user, content) {
+    console.log({ id, user, content })
+    this.http.put('http://localhost:3000/blog-post-comment', { id, user, content })
       .subscribe(() => { }, err => console.error(err)
       );
   }
