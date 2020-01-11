@@ -22,15 +22,15 @@ export class BlogPostService {
       }, err => console.error(err));
   }
 
-  public createBlogPost(user, content) {
-    this.http.post('http://localhost:3000/blog-post', { user, content })
-      .subscribe(() => { }, err => console.error(err));
+  public createBlogPost(user, title, content) {
+    this.http.post('http://localhost:3000/blog-post', { user, title, content })
+      .subscribe(() => { this.getBlogPosts(); }, err => console.error(err));
   }
 
   public createBlogPostComment(id, user, content) {
     console.log({ id, user, content })
     this.http.put('http://localhost:3000/blog-post-comment', { id, user, content })
-      .subscribe(() => { }, err => console.error(err)
+      .subscribe(() => { this.getBlogPosts(); }, err => console.error(err)
       );
   }
 

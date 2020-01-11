@@ -11,7 +11,7 @@ import { BlogPostService } from 'src/app/service/blog-post.service';
 export class BlogPostViewComponent implements OnInit {
 
   @Input() blogPost: any;
-  newComment: string;
+  public newComment: string;
 
   constructor(public modalController: ModalController, public navCtrl: NavController, private blogPostService: BlogPostService) { }
 
@@ -25,7 +25,6 @@ export class BlogPostViewComponent implements OnInit {
   }
 
   dismiss() {
-    this.blogPostService.getBlogPosts();
     this.modalController.dismiss({
       dismissed: true
     });
