@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <ion-icon (click)="dismiss()" name="arrow-round-back"></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-textarea [(ngModel)]="title"></ion-textarea>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-textarea [(ngModel)]="newBlogPost"></ion-textarea>
+    </ion-card-content>
+  </ion-card>
+  <ion-button (click)="postBlogPost()" class="ion-text-right"></ion-button>
+</ion-content>

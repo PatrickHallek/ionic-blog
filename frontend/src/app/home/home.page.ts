@@ -3,6 +3,7 @@ import { ModalController } from '@ionic/angular';
 import { BlogPostViewComponent } from '../components/blog-post-view/blog-post-view.component';
 import { Subscription } from 'rxjs';
 import { BlogPostService } from '../service/blog-post.service';
+import { CreateBlogPostComponent } from '../components/create-blog-post/create-blog-post.component';
 
 @Component({
   selector: 'app-home',
@@ -26,6 +27,13 @@ export class HomePage implements OnInit, OnDestroy {
     const modal = await this.modalController.create({
       component: BlogPostViewComponent,
       componentProps: { blogPost }
+    });
+    return await modal.present();
+  }
+
+  async createBlogPost() {
+    const modal = await this.modalController.create({
+      component: CreateBlogPostComponent
     });
     return await modal.present();
   }

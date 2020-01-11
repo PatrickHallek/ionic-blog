@@ -12,10 +12,11 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BlogPostViewComponent } from './components/blog-post-view/blog-post-view.component';
+import { CreateBlogPostComponent } from './components/create-blog-post/create-blog-post.component';
 
 @NgModule({
-  declarations: [AppComponent, BlogPostViewComponent],
-  entryComponents: [BlogPostViewComponent],
+  declarations: [AppComponent, BlogPostViewComponent, CreateBlogPostComponent],
+  entryComponents: [BlogPostViewComponent, CreateBlogPostComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
