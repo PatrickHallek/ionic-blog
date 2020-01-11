@@ -15,8 +15,14 @@
     <ion-card-content>
       {{blogPost.content}}
     </ion-card-content>
-    <ion-card-content *ngIf="blogPost.comments" class="ion-text-right text-accent">
+
+    <ion-card-content *ngIf="blogPost.comments"
+      class="ion-text-right text-accent ion-no-padding ion-padding-horizontal ion-padding-bottom">
       {{blogPost.comments.length}} <ion-icon class="text-accent" name="contacts"></ion-icon>
     </ion-card-content>
   </ion-card>
+
+  <div class="add-blog-post">
+    <ion-icon class="ion-text-right" name="add-circle-outline"></ion-icon>
+  </div>
 </ion-content>
