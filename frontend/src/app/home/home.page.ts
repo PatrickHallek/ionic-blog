@@ -25,7 +25,7 @@ export class HomePage implements OnInit, OnDestroy {
   async openBlogPost(blogPost) {
     const modal = await this.modalController.create({
       component: BlogPostViewComponent,
-      componentProps: blogPost
+      componentProps: { blogPost }
     });
     return await modal.present();
   }
