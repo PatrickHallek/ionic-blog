@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { NavParams, NavController, ModalController } from '@ionic/angular';
+import { NavController, ModalController } from '@ionic/angular';
 import { BlogPostService } from 'src/app/service/blog-post.service';
 
 
@@ -10,11 +10,7 @@ import { BlogPostService } from 'src/app/service/blog-post.service';
 })
 export class BlogPostViewComponent implements OnInit {
 
-  @Input() comments: any;
-  @Input() user: any;
-  @Input() title: any;
-  @Input() content: any;
-  @Input() _id: any;
+  @Input() blogPost: any;
   newComment: string;
 
   constructor(public modalController: ModalController, public navCtrl: NavController, private blogPostService: BlogPostService) { }
@@ -23,11 +19,13 @@ export class BlogPostViewComponent implements OnInit {
   }
 
   postComment() {
-    this.blogPostService.createBlogPostComment(this._id, 'user', this.newComment);
-    this.dismiss();
+    this.blogPostService.createBlogPostComment(this.blogPost._id, 'user', this.newComment);
+    this.blogPost.comments.push({ user: 'user', content: this.newComment });
+    this.newComment = '';
   }
 
   dismiss() {
+    this.blogPostService.getBlogPosts();
     this.modalController.dismiss({
       dismissed: true
     });
