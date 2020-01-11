@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { NavParams, ModalController } from '@ionic/angular';
+import { NavParams, NavController, ModalController } from '@ionic/angular';
+import { BlogPostService } from 'src/app/service/blog-post.service';
 
 
 @Component({
@@ -13,15 +14,22 @@ export class BlogPostViewComponent implements OnInit {
   @Input() user: any;
   @Input() title: any;
   @Input() content: any;
+  @Input() _id: any;
+  newComment: string;
 
-  constructor(public modalController: ModalController) { }
+  constructor(public modalController: ModalController, public navCtrl: NavController, private blogPostService: BlogPostService) { }
 
   ngOnInit() {
   }
 
+  postComment() {
+    this.blogPostService.createBlogPostComment(this._id, 'user', this.newComment);
+    this.dismiss();
+  }
+
   dismiss() {
     this.modalController.dismiss({
-      'dismissed': true
+      dismissed: true
     });
   }
 
