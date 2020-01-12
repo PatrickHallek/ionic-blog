@@ -10,7 +10,7 @@ import { BlogPostService } from 'src/app/service/blog-post.service';
 export class CreateBlogPostComponent implements OnInit {
 
   public title: string;
-  public newBlogPost: string;
+  public newBlogPostContent: string;
 
   constructor(public modalController: ModalController, public navCtrl: NavController, private blogPostService: BlogPostService) { }
 
@@ -18,7 +18,7 @@ export class CreateBlogPostComponent implements OnInit {
   }
 
   postBlogPost() {
-    this.blogPostService.createBlogPost('user', this.title, this.newBlogPost);
+    this.blogPostService.createBlogPost('user', this.title, this.newBlogPostContent);
     this.dismiss();
   }
 

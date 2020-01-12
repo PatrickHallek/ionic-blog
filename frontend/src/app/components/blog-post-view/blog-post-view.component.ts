@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NavController, ModalController } from '@ionic/angular';
 import { BlogPostService } from 'src/app/service/blog-post.service';
+import { BlogPost } from 'src/app/models/blog-post';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { BlogPostService } from 'src/app/service/blog-post.service';
 })
 export class BlogPostViewComponent implements OnInit {
 
-  @Input() blogPost: any;
+  @Input() blogPost: BlogPost;
   public newComment: string;
 
   constructor(public modalController: ModalController, public navCtrl: NavController, private blogPostService: BlogPostService) { }
@@ -20,7 +21,7 @@ export class BlogPostViewComponent implements OnInit {
 
   postComment() {
     this.blogPostService.createBlogPostComment(this.blogPost._id, 'user', this.newComment);
-    this.blogPost.comments.push({ user: 'user', content: this.newComment });
+    this.blogPost.comments.push({ user: 'user', content: this.newComment, timestamp: new Date(Date.now()) });
     this.newComment = '';
   }
 
