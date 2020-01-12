@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NavController, ModalController } from '@ionic/angular';
-import { BlogPostService } from 'src/app/service/blog-post.service';
+import { BlogPostService } from 'src/app/services/blog-post.service';
 import { BlogPost } from 'src/app/models/blog-post';
-import { AuthService } from 'src/app/service/auth.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavController } from '@ionic/angular';
-import { BlogPostService } from 'src/app/service/blog-post.service';
-import { AuthService } from 'src/app/service/auth.service';
+import { BlogPostService } from 'src/app/services/blog-post.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-create-blog-post',

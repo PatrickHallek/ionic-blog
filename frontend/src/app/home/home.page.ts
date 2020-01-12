@@ -2,11 +2,11 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { BlogPostViewComponent } from '../components/blog-post-view/blog-post-view.component';
 import { Subscription } from 'rxjs';
-import { BlogPostService } from '../service/blog-post.service';
+import { BlogPostService } from '../services/blog-post.service';
 import { CreateBlogPostComponent } from '../components/create-blog-post/create-blog-post.component';
 import { BlogPost } from '../models/blog-post';
 import { SetUsernameComponent } from '../components/set-username/set-username.component';
-import { AuthService } from '../service/auth.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-home',
