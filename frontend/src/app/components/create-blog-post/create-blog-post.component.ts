@@ -24,9 +24,11 @@ export class CreateBlogPostComponent implements OnInit {
   }
 
   async postBlogPost() {
-    const user = await this.authService.getUsername();
-    this.blogPostService.createBlogPost(user, this.title, this.newBlogPostContent);
-    this.dismiss();
+    if (this.title && this.newBlogPostContent) {
+      const user = await this.authService.getUsername();
+      this.blogPostService.createBlogPost(user, this.title, this.newBlogPostContent);
+      this.dismiss();
+    }
   }
 
   dismiss() {

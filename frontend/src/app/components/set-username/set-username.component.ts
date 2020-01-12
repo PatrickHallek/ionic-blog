@@ -16,8 +16,10 @@ export class SetUsernameComponent implements OnInit {
   ngOnInit() { }
 
   setUsername() {
-    this.authService.setUsername(this.username);
-    this.dismiss();
+    if (this.username) {
+      this.authService.setUsername(this.username);
+      this.dismiss();
+    }
   }
 
   dismiss() {

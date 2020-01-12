@@ -26,10 +26,12 @@ export class BlogPostViewComponent implements OnInit {
   }
 
   async postComment() {
-    const user = await this.authService.getUsername();
-    this.blogPostService.createBlogPostComment(this.blogPost._id, user, this.newComment);
-    this.blogPost.comments.push({ user, content: this.newComment, timestamp: new Date(Date.now()) });
-    this.newComment = '';
+    if (this.newComment) {
+      const user = await this.authService.getUsername();
+      this.blogPostService.createBlogPostComment(this.blogPost._id, user, this.newComment);
+      this.blogPost.comments.push({ user, content: this.newComment, timestamp: new Date(Date.now()) });
+      this.newComment = '';
+    }
   }
 
   dismiss() {
