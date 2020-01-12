@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavController } from '@ionic/angular';
 import { BlogPostService } from 'src/app/service/blog-post.service';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-create-blog-post',
@@ -12,13 +13,19 @@ export class CreateBlogPostComponent implements OnInit {
   public title: string;
   public newBlogPostContent: string;
 
-  constructor(public modalController: ModalController, public navCtrl: NavController, private blogPostService: BlogPostService) { }
+  constructor(
+    public modalController: ModalController,
+    public navCtrl: NavController,
+    private blogPostService: BlogPostService,
+    private authService: AuthService
+  ) { }
 
   ngOnInit() {
   }
 
-  postBlogPost() {
-    this.blogPostService.createBlogPost('user', this.title, this.newBlogPostContent);
+  async postBlogPost() {
+    const user = await this.authService.getUsername();
+    this.blogPostService.createBlogPost(user, this.title, this.newBlogPostContent);
     this.dismiss();
   }
 
