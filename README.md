@@ -2,9 +2,9 @@
 
 This is a simple mobile app that presents a blog, where users can create and comment blog posts without registration but with a username.
 
-Solarized dark             |  Solarized Ocean           |  Solarized Ocean
+Registration             |  Blog         |  Comments
 :-------------------------:|:-------------------------:|:------------------------------
-![Set Username](https://raw.githubusercontent.com/PatrickHallek/ionic-blog/master/frontend/src/assets/images/screenshot-set-username.PNG)  |  ![Home](https://raw.githubusercontent.com/PatrickHallek/ionic-blog/master/frontend/src/assets/images/screenshot-blog-posts.PNG) | !![Comment Section](https://raw.githubusercontent.com/PatrickHallek/ionic-blog/master/frontend/src/assets/images/screenshot-blog-post-comment.PNG)
+![Set Username](https://raw.githubusercontent.com/PatrickHallek/ionic-blog/master/frontend/src/assets/images/screenshot-set-username.PNG)  |  ![Home](https://raw.githubusercontent.com/PatrickHallek/ionic-blog/master/frontend/src/assets/images/screenshot-blog-posts.PNG) | ![Comment Section](https://raw.githubusercontent.com/PatrickHallek/ionic-blog/master/frontend/src/assets/images/screenshot-blog-post-comment.PNG)
 
 ## Start the backend
 
