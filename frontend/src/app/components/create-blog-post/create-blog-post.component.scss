@@ -1,9 +1,10 @@
+ion-input,
 ion-textarea {
     border: 2px solid var(--accent-color);
     border-radius: 5px;
-    width: 80%;
-    height: 60px;
+    width: 100%;
     margin: 0px;
+    margin-top: 5px;
 }
 
 ion-content {
