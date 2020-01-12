@@ -8,7 +8,11 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var app = express();
 
-mongoose.connect("mongodb://localhost/blog", {
+var dotenv = require('dotenv');
+dotenv.config();
+var MONGO_DB_HOST = process.env.MONGO_DB_HOST || "mongodb://localhost/blog";
+
+mongoose.connect(MONGO_DB_HOST, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
