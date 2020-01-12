@@ -11,7 +11,7 @@
     <ion-card-header>
       Please type in your username
       <div class="ion-card-header-inner">
-        <ion-input [(ngModel)]="username"></ion-input>
+        <ion-input (keyup.enter)="setUsername()" [(ngModel)]="username"></ion-input>
         <ion-icon (click)="setUsername()" class="ion-text-right" name="arrow-round-forward"></ion-icon>
       </div>
     </ion-card-header>

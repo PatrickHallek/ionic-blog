@@ -30,6 +30,6 @@
 </ion-content>
 
 <div class="write-comment">
-  <ion-textarea [(ngModel)]="newComment"></ion-textarea>
+  <ion-textarea (keyup.enter)="postComment()" [(ngModel)]="newComment"></ion-textarea>
   <ion-icon (click)="postComment()" class="ion-text-right" name="arrow-round-forward"></ion-icon>
 </div>
